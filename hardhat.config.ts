@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@nomiclabs/hardhat-ethers";
 import "hardhat-deploy";
 
 const config: HardhatUserConfig = {
@@ -11,12 +12,25 @@ const config: HardhatUserConfig = {
     deployer: {
       default: 0,
     },
+    swapper: 1,
   },
   networks: {
+    hardhat: {
+      loggingEnabled: true,
+      forking: {
+        enabled: true,
+        url: "https://polygon-mainnet.infura.io/v3/API_KEY",
+        blockNumber: 41054105,
+      },
+      mining: {
+        auto: false,
+        interval: 1000,
+      },
+    },
     polygon: {
       url: "https://polygon-rpc.com/",
       chainId: 137,
-      accounts: ["PRIVATE_KEY"],
+      accounts: [],
       verify: {
         etherscan: {
           apiKey: "POLYGONSCAN_API_KEY",
