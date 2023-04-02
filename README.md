@@ -1,13 +1,15 @@
-# Sample Hardhat Project
+# Custom Swap
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Swaps native MATIC for DAI and stMATIC evenly
 
-Try running some of the following tasks:
+Follow the below guide to deploy locally
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+npm install
+npx hardhat compile
+Update information in hardhat.config.ts, replace PRIVATE_KEY with deployers key and POLYGONSCAN_API_KEY with your key to verify your contract
+npx hardhat deploy --network polygon 
+npx hardhat etherscan-verify --network polygon 
 ```
+
+Voila! You can now go to polygon scan and do the swap.
