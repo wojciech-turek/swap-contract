@@ -12,4 +12,12 @@ npx hardhat deploy --network polygon
 npx hardhat etherscan-verify --network polygon 
 ```
 
+# Testing
+```
+Update infura api key in hardhat.config.ts, for hardhat fork
+
+Run below command to execute tests on polygon mainnet fork
+npx hardhat test
+```
+
 Voila! You can now go to polygon scan and do the swap.
